@@ -22,7 +22,7 @@ class OrderInfo(models.Model):
     customer_num = models.IntegerField()
     payment = models.BooleanField()
     # 총 금액, 알바생 정보 필요
-    price_sum = models.IntegerField()
+    price_sum = models.IntegerField(default=0)
 
     def __str__(self):
         return f'담당자: , 주문번호: {self.id}'
@@ -34,9 +34,9 @@ class OrderInfo(models.Model):
             price_sum += order.menu_info.price * order.menu_count
         return price_sum
 
-    def save(self):
+    def save(self, *args, **kwargs):
         # 총 금액 계산해서 저장하도록 한다
-        pass
+        super().save(*args, **kwargs)
 
 
 class OrderDetail(models.Model):
