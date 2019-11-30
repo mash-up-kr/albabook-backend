@@ -9,6 +9,7 @@ class User(AbstractUser):
       #  ('K', 'KakaoTalk'),
     #)
 
+    img_profile = models.ImageField('프로필 이미지', blank=True)
     oauth_token = models.CharField(max_length=30, unique=True)
 
     def __str__(self):
