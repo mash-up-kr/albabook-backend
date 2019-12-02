@@ -122,3 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# User가 업로드한 파일들에 대한 링크를 생성 시 prefix로 사용될 부분
+MEDIA_URL = '/media/'
+
+# User가 업로드한 파일들이 실제로 위치하는 폴더들의 시작점
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
