@@ -1,6 +1,10 @@
 from django.contrib import admin
-from .models import Table, Menu, OrderInfo, OrderDetail
+from .models import Table, Category, Menu, OrderInfo, OrderDetail
 
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
 
 @admin.register(Table)
 class TableAdmin(admin.ModelAdmin):
